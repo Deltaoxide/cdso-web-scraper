@@ -9,21 +9,9 @@ class CmdLoop(cmd.Cmd):
     prompt="<CDSO_Shell> "
     
 
-    def do_postntfy(self,arg):
+    def do_request(self,arg):
         'Send Notification'
-        ntfy_manager = src.NtfyManager()
-        ntfy_manager.send_ticket_notification("Yeni Bilet Çıktı")
-        
-
-    def do_stopntfy(self,arg):
-        'Stop Notification'
-        ntfy_manager = src.NtfyManager()
-        ntfy_manager.send_stop_notification()
-        
-    def do_startntfy(self,arg):
-        'Start Notification'
-        ntfy_manager = src.NtfyManager()
-        ntfy_manager.send_init_notification()
+        return src.new_request()
     
     def do_startlistener(self,arg):
         'Start Listener'

@@ -165,7 +165,7 @@ class Listener():
                 i += 1
                 time.sleep(RETRY_INTERVAL)
         except Exception as e:
-            Ntfy_Manager.send_stop_notification(message="Listener Exception: "+ e)
+            Ntfy_Manager.send_stop_notification(message="Listener Exception: "+ str(e))
             print("An error occurred. Exiting...")
             exit(1)
             
